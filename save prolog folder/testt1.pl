@@ -1,0 +1,24 @@
+father(john,paul).
+father(jim,andrew).
+father(john,bill).
+brother(paul ,bill).
+loves(romeo, juliet).
+loves(juliet, romeo) :- loves(romeo, juliet).
+write_list([]).
+write_list([Head|Tail]) :-
+  write(Head), nl,
+  write_list(Tail).
+say_hi :-
+  write('What is your name? '),
+  read(X),
+  write('Hi '),
+  write(X).
+fav_char :-
+  write('What is your favorite character? '),get(X),
+  format('The Ascii value ~w is ', [X]),
+  put(X),nl.
+count_to_10(10) :- write(10), nl.
+count_to_10(X) :-
+  write(X),nl,
+  Y is X + 1,
+  count_to_10(Y).
